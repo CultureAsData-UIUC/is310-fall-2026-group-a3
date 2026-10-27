@@ -1,0 +1,61 @@
+{
+  "record_count": 75,
+  "by_strand": {
+    "athlete_mobility": 25,
+    "nba_global": 25,
+    "f1_allegiance": 25
+  },
+  "unique_source_urls": 75,
+  "provenance_by_strand": {
+    "athlete_mobility": {
+      "institutional": 14,
+      "independent": 11
+    },
+    "nba_global": {
+      "independent": 16,
+      "institutional": 9
+    },
+    "f1_allegiance": {
+      "independent": 12,
+      "institutional": 13
+    }
+  },
+  "access_methods": {
+    "original_page": 56,
+    "indexed_text": 19
+  },
+  "dates_not_displayed": [
+    "NBA004",
+    "NBA005",
+    "F1009"
+  ],
+  "indexed_text_records": [
+    "SOC013",
+    "SOC014",
+    "SOC018",
+    "SOC019",
+    "SOC020",
+    "SOC023",
+    "SOC024",
+    "SOC025",
+    "NBA003",
+    "NBA004",
+    "NBA006",
+    "NBA011",
+    "NBA016",
+    "NBA021",
+    "NBA023",
+    "F1003",
+    "F1007",
+    "F1012",
+    "F1014"
+  ],
+  "awaiting_student_review": 75,
+  "structural_errors": [],
+  "review_warnings": [
+    "3 source dates were not displayed; verify before time-based analysis.",
+    "19 records use indexed text rather than readable original-page text.",
+    "75 records await student review."
+  ],
+  "limitation": "Checks cover structure, not factual accuracy or interpretation. Same-event stories are not independent observations."
+}
