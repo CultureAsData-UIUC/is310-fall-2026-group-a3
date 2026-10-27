@@ -1,0 +1,18 @@
+{
+  "record_count": 6,
+  "proposed_target": 75,
+  "remaining_to_target": 69,
+  "by_strand": {
+    "athlete_mobility": 2,
+    "nba_global": 2,
+    "f1_allegiance": 2
+  },
+  "remaining_by_strand": {
+    "athlete_mobility": 23,
+    "nba_global": 23,
+    "f1_allegiance": 23
+  },
+  "awaiting_student_review": 6,
+  "structural_errors": [],
+  "note": "Counts describe this selected corpus. Passing checks does not verify facts or interpretation."
+}
