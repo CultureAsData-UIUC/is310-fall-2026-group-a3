@@ -56,7 +56,7 @@ Cut, with the reason recorded in `candidates.csv` or `data/snapshot_log.csv`:
 - **Encoding bug.** Five Russian pages (Nur.kz and one Fontanka) came back as mojibake because the site sent no charset and `requests` fell back to Latin-1. Fixed `snapshot.py` to use the detected encoding and refetched them.
 - No two ok pages had identical text hashes. But a few were the same wire story with small edits (AAP in Canberra Times, Reuters in Onmanorama, AFP in Infobae), so those were cut by hand at selection.
 
-### Selecting the final 77
+### Selecting the final 75
 
 From the 133 ok snapshots we picked 7 or 8 per player:
 
@@ -65,9 +65,16 @@ From the 133 ok snapshots we picked 7 or 8 per player:
 3. Mix: try to get old country, new country and international outlets for each player.
 4. Kukushkin only had 4 good items after the first round, so a second search added 4 more (Zakon.kz, Sport-Express, The Globe and Mail, Tennis.com). 3 of those made the cut.
 
-Result: 77 items. 50 English, 25 Russian, 1 French, 1 Italian. Outlet countries: 17 KZ, 11 US, 10 GB, 8 RU and the rest spread across 18 other countries (22 total). Only 2 Australian outlets for Kasatkina and 1 Belarusian one for Sabalenka, so the new country side is thin for those two.
+Result: 77 items at first. A later review cut 2 near duplicates (TEN033, the same Hamburg 2010 title as TEN034, and TEN045, a second Shevchenko roundup a day after TEN044), which leaves 75: 48 English, 25 Russian, 1 French and 1 Italian. Outlet countries: 17 KZ, 10 US, 9 GB, 8 RU and the rest spread across 18 other countries (22 total). The cut rows and their old notes are in `data/coding_history.csv`. Only 2 Australian outlets for Kasatkina and 1 Belarusian one for Sabalenka, so the new country side is thin for those two.
 
-**How closely each item was read.** The reading pass used a digest of each snapshot: title, metadata date and the sentences that mention the player next to nationality words (born, citizen, federation, flag, money, war and the Russian equivalents), plus targeted reads where something was unclear (who said a quote, whether money came up). Not every full text was read start to finish. That's a big reason Joy's review matters.
+**How closely each item was read.** The reading pass used a digest of each snapshot: title, metadata date and the sentences that mention the player next to nationality words (born, citizen, federation, flag, money, war and the Russian equivalents), plus targeted reads where something was unclear (who said a quote, whether money came up). Not every full text was read start to finish in that first pass. A second pass on 2026-10-28 did read every text in full, and all 62 quotes were then checked word for word against the full snapshot text or headline (all matched).
+
+**Exceptions and known skews.**
+
+- TEN025 (Kukushkin's last match) never mentions the switch, which breaks rule 1. It stays because the retirement coverage takes his Kazakh identity for granted, and that's part of how framing changes over a career.
+- TEN037 is a federation interview where Golubev is named once. It's filed under him for convenience, but it's really a federation level item about the whole recruitment program.
+- TEN017 to TEN019 all come from the same Putintseva podcast. That's on purpose, to compare how a Russian and a Kazakh outlet spin the same interview.
+- 6 of the 8 Dzalamidze items are from June 20 to 21 2022, and most rehash the same Times scoop about the Wimbledon ban. That inflates `flag_of_convenience` for her. Later coverage (the Paris 2024 Olympics, say) would balance it and is a gap to fill.
 
 ## Transformation 2: snapshot text to structured row
 

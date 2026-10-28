@@ -46,7 +46,7 @@ FRAMES = {"opportunity_funding", "pragmatic_career", "loyalty_betrayal", "politi
 ITEM_TYPES = {"article", "interview", "statement", "profile"}
 IDENTITIES = {"birthplace", "citizenship", "residence", "training_base", "federation", "heritage"}
 YES_NO = {"yes", "no"}
-REQUIRED = ["item_id", "player", "from_nation", "to_nation", "outlet", "outlet_country", "url",
+REQUIRED = ["item_id", "player_id", "player", "from_nation", "to_nation", "outlet", "outlet_country", "url",
             "access_date", "item_type", "language", "snapshot_sha256", "evidence_note",
             "frame_primary", "money_mentioned", "player_voice"]
 QUOTE_RE = re.compile(r"[\"“«]([^\"”»]+)[\"”»]")
@@ -116,8 +116,10 @@ def check(rows, players):
             bad(r, "hash_format", "snapshot_sha256 is not 64 hex characters")
 
         p = _find_player(players, r)
+        if p and not _written_matches(r):
+            bad(r, "player_facts", f"player '{r['player']}' does not look like player_id '{r['player_id']}'")
         if p is None:
-            bad(r, "player_facts", f"player '{r['player']}' not found in players.csv")
+            bad(r, "player_facts", f"player_id '{r['player_id']}' not found in players.csv")
         else:
             for f in ("from_nation", "to_nation", "switch_year"):
                 if r[f] != p[f]:
@@ -136,7 +138,7 @@ def check(rows, players):
 
 
 # 'player' is kept as written in the source, so Russian items use Cyrillic.
-# These surname stems (Latin and Cyrillic) tie a row back to players.csv.
+# 'player_id' is the canonical Latin name. These surname stems check the two agree.
 PLAYER_STEMS = {
     "Elena Rybakina": ["rybakin", "рыбакин"],
     "Alexander Bublik": ["bublik", "бублик"],
@@ -152,11 +154,14 @@ PLAYER_STEMS = {
 
 
 def _find_player(players, row):
+    """player_id is the canonical Latin name, so it keys straight into players.csv."""
+    return players.get(row.get("player_id", ""))
+
+
+def _written_matches(row):
+    """The as-written name should contain one of the player_id's surname stems."""
     written = row["player"].lower()
-    for name, stems in PLAYER_STEMS.items():
-        if any(s in written for s in stems):
-            return players.get(name)
-    return None
+    return any(s in written for s in PLAYER_STEMS.get(row["player_id"], []))
 
 
 _SNAP_BY_HASH = None
@@ -192,10 +197,10 @@ def build_report(rows, problems, path, with_excerpts):
         ids = ", ".join(r["identities_mentioned"].split("|")) or "none"
         prob_html = "".join(f"<li>{html.escape(p['message'])}</li>" for p in probs)
         cards.append(f"""
-<article class="card" data-id="{html.escape(r['item_id'])}" data-player="{html.escape(r['player'])}">
+<article class="card" data-id="{html.escape(r['item_id'])}" data-player="{html.escape(r['player_id'] + ' ' + r['player'])}">
   <header>
     <span class="id">{html.escape(r['item_id'])}</span>
-    <span class="player">{html.escape(r['player'])}</span>
+    <span class="player">{html.escape(r['player_id'])}</span> <span class="as-written">({html.escape(r['player'])})</span>
     <span class="muted">{html.escape(r['from_nation'])} &rarr; {html.escape(r['to_nation'])} ({html.escape(r['switch_year'] or '?')})</span>
     <span class="status {'done' if reviewed else 'todo'}">{('reviewed by ' + html.escape(reviewed)) if reviewed else 'not reviewed'}</span>
   </header>
@@ -338,7 +343,7 @@ def main():
         "generated": dt.datetime.now().isoformat(timespec="seconds"),
         "dataset": str(DATASET.relative_to(BASE)),
         "rows": len(rows),
-        "players": dict(Counter(r["player"] for r in rows)),
+        "players": dict(Counter(r["player_id"] for r in rows)),
         "frame_primary_counts": dict(Counter(r["frame_primary"] for r in rows)),
         "structurally_consistent": not structural,
         "rows_missing_review": counts.get("review", 0),

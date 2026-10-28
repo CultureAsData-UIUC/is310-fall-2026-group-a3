@@ -6,8 +6,9 @@ DRAFT for Joy to edit. The examples below come from real items in the dataset, p
 
 | Field | What goes in it | Rule |
 |---|---|---|
-| `item_id` | TEN001, TEN002... | Unique, assigned in order by `precode.py` |
-| `player` | Player name as written in the source | Cyrillic stays Cyrillic (e.g. Елена Рыбакина) |
+| `item_id` | TEN001, TEN002... | Unique and fixed once assigned (stored in `coding_suggestions.csv`). A cut item leaves a gap, e.g. TEN033 and TEN045 |
+| `player_id` | Canonical Latin name, e.g. Elena Rybakina | Matches `players.csv`. Group and count by this |
+| `player` | Player name as written in the source | Cyrillic stays Cyrillic (e.g. Елена Рыбакина). `check_dataset.py` checks it matches `player_id` |
 | `from_nation`, `to_nation` | Three-letter codes, or `NEUTRAL` | Copied from `players.csv`, never typed per row |
 | `switch_year` | Year of the switch | From `players.csv`, blank if not verified |
 | `outlet` | Publication name | Wire services noted in brackets, e.g. NBC New York (AP) |
@@ -18,12 +19,12 @@ DRAFT for Joy to edit. The examples below come from real items in the dataset, p
 | `item_type` | `article`, `interview`, `statement`, `profile` | Interview = the piece is mainly the player's answers. Profile = background or explainer piece |
 | `language` | ISO 639-1 code | Language of the original text |
 | `snapshot_sha256` | Hash of the extracted text | Proves which version of the text was coded |
-| `evidence_note` | Short paraphrase plus at most one quote under 15 words | Copyright rule. `check_dataset.py` enforces it |
+| `evidence_note` | Short paraphrase plus at most one quote under 15 words | Copyright rule, `check_dataset.py` enforces it. The quote is labeled with its speaker, e.g. `Quote (player):` or `Quote (outlet headline):`. Non-English quotes get an English translation in brackets after them |
 | `frame_primary` | Main frame, from the list below | Required |
 | `frame_secondary` | Second frame or blank | Can't repeat the primary |
 | `identities_mentioned` | Pipe separated: `birthplace`, `citizenship`, `residence`, `training_base`, `federation`, `heritage` | Only ones the item actually mentions |
 | `money_mentioned` | `yes` / `no` | Any money: federation funding, prize money, earnings |
-| `player_voice` | `yes` / `no` | Yes if the player is quoted directly (not just paraphrased) |
+| `player_voice` | `yes` / `no` | Yes if the player's own words appear directly, spoken or written (press conference, Instagram post, a message on a camera lens). Paraphrase alone is no |
 | `keyword_flags` | Frames whose keyword lists hit 2+ times | Automatic, from `precode.py`. A pointer, not a code |
 | `uncertainty_note` | Free text | Starts with "Provisional AI code." until reviewed. Explains `other`, blank dates, shared items |
 | `reviewed_by` | Reviewer's name | Blank until Joy reviews. Only Joy fills this |
@@ -47,11 +48,11 @@ Two frames max per item. If nothing fits, use `other` and say why in `uncertaint
 | `pragmatic_career` | Switch framed as a rational career move | **TEN058** (Sports.ru, Dzalamidze): she says at 29 with a career best ranking her prospects are much better in Georgia. |
 | `loyalty_betrayal` | Switch framed as abandoning a nation or not belonging | **TEN050** (Meduza, Kasatkina): an exiled outlet reports she was branded a traitor back home after joining Team Australia. |
 | `politics_war` | Sanctions, war, neutral status, political pressure | **TEN070** (Free Malaysia Today, Sabalenka): she won't comment on the war after a Ukrainian opponent skips the handshake, and Lukashenko is said to have claimed her win despite the neutral flag. |
-| `belonging_homecoming` | New nation framed as real home or identity | **TEN022** (Nur.kz, Putintseva): after a 2026 Australian Open win she thanks Kazakh fans and says she feels Kazakh. |
+| `belonging_homecoming` | New nation framed as real home or identity. For neutral players with no new nation, the origin nation they want to represent (e.g. Sabalenka wanting the Belarus flag back) | **TEN022** (Nur.kz, Putintseva): after a 2026 Australian Open win she thanks Kazakh fans and says she feels Kazakh. |
 | `flag_of_convenience` | Nationality framed as purchased or nominal | **TEN023** (Philstar, Kukushkin): a 2008 Davis Cup preview says two Russians changed citizenship just to become eligible for Kazakhstan. |
 | `national_claiming` | Old or home country claiming the player anyway | **TEN004** (NBC New York via AP, Rybakina): the Russian federation head calls the new Wimbledon champion "our product" of Russian training. |
 | `multiple_identity` | Player framed as belonging to several places at once | **TEN031** (Tennishead, Golubev): profile where he calls himself a citizen of the world (Russia, Italy, Kazakhstan). |
-| `other` | None of the above. Explain in `uncertainty_note` | **TEN033** (Tennis.com via AP, Golubev): short Hamburg match report where the switch is one line of background. |
+| `other` | None of the above. Explain in `uncertainty_note` | **TEN034** (Tennishead, Golubev): Hamburg 2010 match report where his Russian birth is just background. |
 
 Item numbers above match the current build. If `precode.py` reorders rows, check them again.
 

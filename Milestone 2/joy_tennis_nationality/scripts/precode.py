@@ -166,7 +166,7 @@ def iso_date(raw):
 
 
 DATASET_FIELDS = [
-    "item_id", "player", "from_nation", "to_nation", "switch_year", "outlet", "outlet_country",
+    "item_id", "player_id", "player", "from_nation", "to_nation", "switch_year", "outlet", "outlet_country",
     "url", "pub_date", "access_date", "item_type", "language", "snapshot_sha256", "evidence_note",
     "frame_primary", "frame_secondary", "identities_mentioned", "money_mentioned", "player_voice",
     "keyword_flags", "uncertainty_note", "reviewed_by",
@@ -192,17 +192,27 @@ def main():
             if r.get("reviewed_by", "").strip():
                 reviewed[r["url"]] = r
 
+    # item_id is stored in coding_suggestions.csv so it never shifts when a row
+    # is cut. New rows without one get the next free number.
+    used = [int(s["item_id"][3:]) for s in suggestions if s.get("item_id")]
+    next_n = max(used, default=0) + 1
+    for s in suggestions:
+        if not s.get("item_id"):
+            s["item_id"] = f"TEN{next_n:03d}"
+            next_n += 1
+
     out = []
-    for n, s in enumerate(suggestions, 1):
+    for s in suggestions:
         url = cands[s["candidate_id"]]["url"]
         if url in reviewed:
-            kept = dict(reviewed[url], item_id=f"TEN{n:03d}")
+            kept = dict(reviewed[url], item_id=s["item_id"], player_id=s["player_canonical"])
             out.append(kept)
             continue
         cid = s["candidate_id"]
         c, snap, p = cands[cid], snaps[cid], players[s["player_canonical"]]
         out.append({
-            "item_id": f"TEN{n:03d}",
+            "item_id": s["item_id"],
+            "player_id": s["player_canonical"],
             "player": s["player_as_written"],
             "from_nation": p["from_nation"],
             "to_nation": p["to_nation"],
