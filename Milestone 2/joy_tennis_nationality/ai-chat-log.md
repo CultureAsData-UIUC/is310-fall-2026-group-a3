@@ -91,3 +91,8 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 
 - Claude drafted README, codebook, collection notes, audit plan, reflection notes and references. The references were checked against publisher and library records but are still marked "verify via UIUC library".
 - Claude made a mistake in the first codebook draft: the example item IDs were guessed and all pointed to the wrong rows. It caught this by checking against the dataset and fixed them.
+
+## Phase 8: commits and push
+
+- Claude made 8 commits on `joy-tennis-milestone2`. I asked for no co-author lines, so Claude rewrote the commit messages to take them out. I'm the only author.
+- Pushing straight to the group repo failed with a 403 because my account only has read access. The PR will go up from a fork or after I get added as a collaborator.
