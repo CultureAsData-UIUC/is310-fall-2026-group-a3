@@ -1,0 +1,43 @@
+{
+  "generated": "2026-10-28T00:49:42",
+  "dataset": "data/tennis_nationality_dataset.csv",
+  "rows": 77,
+  "players": {
+    "Elena Rybakina": 4,
+    "Елена Рыбакина": 4,
+    "Александр Бублик": 4,
+    "Alexander Bublik": 3,
+    "Yuliya Putintseva": 1,
+    "Юлия Путинцева": 6,
+    "Mikhail Kukushkin": 5,
+    "Михаил Кукушкин": 2,
+    "Andrey Golubev": 7,
+    "Andreï Golubev": 1,
+    "Alexander Shevchenko": 4,
+    "Александр Шевченко": 4,
+    "Daria Kasatkina": 6,
+    "Дарья Касаткина": 2,
+    "Natela Dzalamidze": 7,
+    "Натела Дзаламидзе": 1,
+    "Andrey Rublev": 7,
+    "Андрей Рублев": 1,
+    "Aryna Sabalenka": 7,
+    "Арина Соболенко": 1
+  },
+  "frame_primary_counts": {
+    "pragmatic_career": 11,
+    "politics_war": 21,
+    "flag_of_convenience": 9,
+    "opportunity_funding": 13,
+    "other": 8,
+    "belonging_homecoming": 12,
+    "loyalty_betrayal": 3
+  },
+  "structurally_consistent": true,
+  "rows_missing_review": 77,
+  "problem_counts": {
+    "review": 77
+  },
+  "problems": [],
+  "note": "Passing means structurally consistent, not correct. Codes need human review."
+}
