@@ -113,7 +113,7 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 - I pasted a checklist of dataset issues and Claude worked through it.
 - Added `player_id` (canonical Latin name) next to `player` (as written), so each player is one group. Item IDs are now stored and stay fixed, so cutting a row leaves a gap instead of renumbering.
 - Checked all 62 quotes word for word against the full snapshot text or headline. All matched.
-- Labeled every quote with its speaker and added English translations after the 16 ru, fr and it quotes.
+- Labeled every quote with its speaker and added English translations after the 22 ru, fr and it quotes.
 - Rewrote every `uncertainty_note` down to its final reasoning and moved the old notes, edit history included, to `data/coding_history.csv`. Old candidate IDs became TEN IDs or "candidate not included".
 - Cut TEN033 (same Hamburg title as TEN034) and TEN045 (a second Shevchenko roundup), so 75 items remain. Gave TEN003 a national_claiming secondary, blanked TEN014's update date and trimmed the dating detail from TEN049.
 - Codebook: widened belonging_homecoming to cover a neutral player's origin nation, defined player_voice to include written messages and wrote down the quote label rule. Did not change money_mentioned, since the codebook already says any money counts (so TEN011, TEN029, TEN066 and TEN069 stay yes).
