@@ -103,3 +103,7 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 - Claude read all 77 article texts in full against their draft codes and changed 51 rows. Each change is explained in that row's `uncertainty_note`. Mistakes it caught from the first pass: Ovechkin's words given to Rublev (C119), a journalist called "US" with no source for that (C018), Tennishead dates printed in the page text but left blank (C059, C060, C064), and several missed identities and money mentions.
 - Decisions: Shevchenko's switch_year stays 2024, and the October 2022 Kazakh flag gets treated as an audit finding. Kasatkina stays AUS with a note that it's permanent residency, not citizenship. Added `national_claiming` and `multiple_identity` to the codebook, widened `opportunity_funding` to cover recruitment, and skipped a safety code (it goes under `politics_war`).
 - Updated `check_dataset.py` and `precode.py` for the new codes and reran them. Result: 0 structural problems and 77 rows still waiting on my review.
+
+## 2026-10-28: Reflection
+
+- I asked Claude to write `reflection.md` from the notes and run it through the humanizer skill so it doesn't read like AI. It's in my voice, but the Use of AI section says Claude wrote the first draft.
