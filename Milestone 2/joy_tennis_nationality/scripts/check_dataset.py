@@ -41,7 +41,8 @@ SNAP = BASE / "snapshots"
 REPORTS = BASE / "reports"
 
 FRAMES = {"opportunity_funding", "pragmatic_career", "loyalty_betrayal", "politics_war",
-          "belonging_homecoming", "flag_of_convenience", "other"}
+          "belonging_homecoming", "flag_of_convenience", "national_claiming",
+          "multiple_identity", "other"}
 ITEM_TYPES = {"article", "interview", "statement", "profile"}
 IDENTITIES = {"birthplace", "citizenship", "residence", "training_base", "federation", "heritage"}
 YES_NO = {"yes", "no"}

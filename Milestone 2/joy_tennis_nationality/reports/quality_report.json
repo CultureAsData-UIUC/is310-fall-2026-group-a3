@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28T00:49:42",
+  "generated": "2026-10-28T14:19:17",
   "dataset": "data/tennis_nationality_dataset.csv",
   "rows": 77,
   "players": {
@@ -25,12 +25,14 @@
     "Арина Соболенко": 1
   },
   "frame_primary_counts": {
-    "pragmatic_career": 11,
-    "politics_war": 21,
+    "multiple_identity": 4,
     "flag_of_convenience": 9,
-    "opportunity_funding": 13,
-    "other": 8,
-    "belonging_homecoming": 12,
+    "politics_war": 19,
+    "national_claiming": 5,
+    "opportunity_funding": 16,
+    "other": 5,
+    "belonging_homecoming": 11,
+    "pragmatic_career": 5,
     "loyalty_betrayal": 3
   },
   "structurally_consistent": true,

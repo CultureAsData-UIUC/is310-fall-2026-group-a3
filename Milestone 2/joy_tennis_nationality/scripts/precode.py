@@ -79,6 +79,19 @@ FRAME_KEYWORDS = {
         r"легионер", r"куп(ил|лен)", r"паспорт", r"натурализ", r"импорт", r"чтобы сыграть",
         r"mercenai", r"passaport",
     ],
+    # old or home country claiming the player anyway (added 2026-10-28)
+    "national_claiming": [
+        r"our product", r"russian school", r"claim(ed|ing|s)? (her|him|the|their)", r"as (its|their) own",
+        r"knows? (which country|that i'?m)", r"\bour (player|girl|boy)\b",
+        r"наш продукт", r"российская школа", r"своим", r"\bсвоих\b", r"верни", r"наш теннисист",
+    ],
+    # several places at once: born, lives, trains, plays for (added 2026-10-28)
+    "multiple_identity": [
+        r"citizen(s)? of the world", r"don'?t live anywhere", r"two (different )?parts", r"half[- ]russian",
+        r"both russia and", r"where (do )?you consider yourself", r"moscow-born",
+        r"нигде не живу", r"две (разные )?части", r"наполовину",
+        r"cittadin[oi] del mondo",
+    ],
 }
 
 IDENTITY_KEYWORDS = {

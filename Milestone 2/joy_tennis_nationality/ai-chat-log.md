@@ -96,3 +96,10 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 
 - Claude made 8 commits on `joy-tennis-milestone2`. I asked for no co-author lines, so Claude rewrote the commit messages to take them out. I'm the only author.
 - Pushing straight to the group repo failed with a 403 because my account only has read access. The PR will go up from a fork or after I get added as a collaborator.
+
+## 2026-10-28: Full read and decisions
+
+- I asked Claude to do the review pass and make the open calls. Claude still left `reviewed_by` blank on every row, since my rules say only I fill that in.
+- Claude read all 77 article texts in full against their draft codes and changed 51 rows. Each change is explained in that row's `uncertainty_note`. Mistakes it caught from the first pass: Ovechkin's words given to Rublev (C119), a journalist called "US" with no source for that (C018), Tennishead dates printed in the page text but left blank (C059, C060, C064), and several missed identities and money mentions.
+- Decisions: Shevchenko's switch_year stays 2024, and the October 2022 Kazakh flag gets treated as an audit finding. Kasatkina stays AUS with a note that it's permanent residency, not citizenship. Added `national_claiming` and `multiple_identity` to the codebook, widened `opportunity_funding` to cover recruitment, and skipped a safety code (it goes under `politics_war`).
+- Updated `check_dataset.py` and `precode.py` for the new codes and reran them. Result: 0 structural problems and 77 rows still waiting on my review.

@@ -43,13 +43,15 @@ Two frames max per item. If nothing fits, use `other` and say why in `uncertaint
 
 | Code | Meaning | Example from the data |
 |---|---|---|
-| `opportunity_funding` | Switch framed around federation money, coaching, resources | **TEN027** (Zakon.kz, Kukushkin): he says even as a top Russian junior he got no support or sponsors and had to scrape to save money, and the piece says that pushed him to Kazakhstan in 2008. |
+| `opportunity_funding` | Switch framed around federation recruitment and support: money, coaching, facilities, or a federation reaching out | **TEN027** (Zakon.kz, Kukushkin): he says even as a top Russian junior he got no support or sponsors and had to scrape to save money, and the piece says that pushed him to Kazakhstan in 2008. |
 | `pragmatic_career` | Switch framed as a rational career move | **TEN058** (Sports.ru, Dzalamidze): she says at 29 with a career best ranking her prospects are much better in Georgia. |
 | `loyalty_betrayal` | Switch framed as abandoning a nation or not belonging | **TEN050** (Meduza, Kasatkina): an exiled outlet reports she was branded a traitor back home after joining Team Australia. |
 | `politics_war` | Sanctions, war, neutral status, political pressure | **TEN070** (Free Malaysia Today, Sabalenka): she won't comment on the war after a Ukrainian opponent skips the handshake, and Lukashenko is said to have claimed her win despite the neutral flag. |
 | `belonging_homecoming` | New nation framed as real home or identity | **TEN022** (Nur.kz, Putintseva): after a 2026 Australian Open win she thanks Kazakh fans and says she feels Kazakh. |
 | `flag_of_convenience` | Nationality framed as purchased or nominal | **TEN023** (Philstar, Kukushkin): a 2008 Davis Cup preview says two Russians changed citizenship just to become eligible for Kazakhstan. |
-| `other` | None of the above. Explain in `uncertainty_note` | **TEN031** (Tennishead, Golubev): profile where he calls himself a citizen of the world (Russia, Italy, Kazakhstan). |
+| `national_claiming` | Old or home country claiming the player anyway | **TEN004** (NBC New York via AP, Rybakina): the Russian federation head calls the new Wimbledon champion "our product" of Russian training. |
+| `multiple_identity` | Player framed as belonging to several places at once | **TEN031** (Tennishead, Golubev): profile where he calls himself a citizen of the world (Russia, Italy, Kazakhstan). |
+| `other` | None of the above. Explain in `uncertainty_note` | **TEN033** (Tennis.com via AP, Golubev): short Hamburg match report where the switch is one line of background. |
 
 Item numbers above match the current build. If `precode.py` reorders rows, check them again.
 
@@ -60,13 +62,13 @@ Item numbers above match the current build. If `precode.py` reorders rows, check
 3. Items that cover several players get filed under the player who is quoted or most central. The others are named in `uncertainty_note`.
 4. A neutral player is "switching" only in the sense the tours took the flag away. Items about them almost always land in `politics_war`, which is expected.
 
-## Suggested revisions (for Joy to decide)
+## Codebook changes (decided 2026-10-28)
 
-The reading pass kept hitting the same gaps:
+The first reading pass kept hitting the same gaps, so after the full read these went in:
 
-- **`national_claiming`** (new). Old or home country claiming the player anyway: the Russian federation calling Rybakina "our product", Lukashenko claiming Sabalenka, Sport-Express calling Kukushkin the Volgograd native playing for Kazakhstan, Kommersant naming Sabalenka's country despite the neutral rule. Right now these land in `other` or get squeezed into `politics_war`. About 7 items would move (TEN004, TEN005, TEN008, TEN028, TEN071, TEN072, TEN077).
-- **`safety_exile`** (new, or widen `politics_war`). Kasatkina's switch is framed around being unsafe in Russia as a gay woman who opposes the war. `politics_war` covers the war part but not the sexuality and safety part.
-- **`multiple_identity`** (new, or a note convention). Golubev ("citizen of the world"), Shevchenko (Rostov, Vienna, Kazakhstan) and Rybakina ("I don't live anywhere") are framed as belonging to several places at once. That's close to the research question about what a single code hides.
-- **Federation recruitment without money.** Tennis Australia reaching out to Kasatkina's agent isn't really `opportunity_funding`. Maybe widen that code to "federation recruitment and support".
+- **`national_claiming`** (added). Old or home country claiming the player anyway: the Russian federation calling Rybakina "our product", Lukashenko saying everyone knows Sabalenka's country, Russian users calling Bublik theirs. 5 primary and 5 secondary codes.
+- **`multiple_identity`** (added). Golubev ("citizen of the world"), Shevchenko (Rostov, Austria, Bratislava, Kazakhstan), Rybakina ("I don't live anywhere") and Dzalamidze ("two different parts" in her blood). 4 primary codes. This is the closest frame to the research question about what a single code hides.
+- **`opportunity_funding` widened** to federation recruitment and support, so a federation reaching out (Tennis Australia to Kasatkina's agent, Kukushkin talking Bublik into the KTF) counts even with no money named.
+- **No `safety_exile` code.** Kasatkina being unsafe in Russia as a gay war critic goes under `politics_war`, with a note. Only one player needed it.
 
-If any of these get added, update the `FRAMES` set in `check_dataset.py` and the keyword lists in `precode.py`.
+`FRAMES` in `check_dataset.py` and the keyword lists in `precode.py` were updated to match.

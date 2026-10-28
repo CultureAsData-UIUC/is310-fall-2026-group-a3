@@ -26,7 +26,7 @@ So nationality is one three-letter code per player in the players file, plus one
 ## What the preview found (facts only, see `reports/audit_preview_summary.md`)
 
 - **Players file:** one code each. Kazakhstan wave all `KAZ`. Kasatkina `AUS`. Rublev `RUS`, Sabalenka `BLR`. Dzalamidze `RUS` even though she has played for Georgia since June 2022.
-- **Codes backdated in match rows.** For most switchers the match rows use the current code even before the switch. Examples: Rybakina is `KAZ` at Moscow in October 2017 (switch 2018). Shevchenko is `KAZ` in 36 appearances in 2022 and 2023, when he was playing as a neutral. Kasatkina is the one player whose code changes in the match rows: `RUS` through the end of 2024, then `AUS` from Brisbane (tourney date 2024-12-30), which is three months before her March 2025 announcement.
+- **Codes backdated in match rows.** For most switchers the match rows use the current code even before the switch. Examples: Rybakina is `KAZ` at Moscow in October 2017 (switch 2018). Shevchenko is `KAZ` in 36 appearances in 2022 and 2023, when he was playing as a neutral (his official switch is January 2024, see `players.csv`). Kasatkina is the one player whose code changes in the match rows: `RUS` through the end of 2024, then `AUS` from Brisbane (tourney date 2024-12-30), which is three months before her March 2025 announcement.
 - **No neutral code.** Rublev has 315 appearances from 2022 on coded `RUS` and Sabalenka has 307 coded `BLR`, though neither played under a flag in that period.
 - **Coverage gap.** Dzalamidze has zero main draw singles matches in scope because she's mostly a doubles player, so this dataset barely sees her at all.
 

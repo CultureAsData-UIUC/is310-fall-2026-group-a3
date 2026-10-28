@@ -12,14 +12,14 @@ Scope: 2008 to 2026, 10 players (6 Russian-born players who moved to Kazakhstan,
 
 As of 2026-10-28:
 
-- [x] `players.csv`: 10 players, each switch fact with a source URL. Two open questions for Joy (Shevchenko's year, Kasatkina residency vs citizenship)
+- [x] `players.csv`: 10 players, each switch fact with a source URL. Shevchenko's year (2024) and Kasatkina's status (permanent residency, plays as AUS) decided 2026-10-28, see notes
 - [x] 158 candidates found, 148 fetched, 133 snapshots ok
 - [x] **77 items** in the dataset, 7 or 8 per player
-- [x] Keyword flags plus AI-drafted provisional codes for every item
+- [x] Keyword flags plus AI-drafted provisional codes for every item, checked again in a full read of every article (2026-10-28)
 - [x] `check_dataset.py`: 0 structural problems, **77 of 77 rows still need Joy's review**
 - [x] Audit preview against Sackmann data (mirror, see `audit_plan.md`)
 - [ ] Joy reviews all 77 items and fills `reviewed_by`
-- [ ] Joy decides on the suggested codebook changes (`codebook.md`)
+- [x] Codebook changes: added `national_claiming` and `multiple_identity`, widened `opportunity_funding` (`codebook.md`)
 - [ ] Joy edits the reflection and checks the references through the UIUC library
 
 ## File map

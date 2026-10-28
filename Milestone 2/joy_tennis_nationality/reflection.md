@@ -12,13 +12,13 @@ These are raw notes on what actually happened while building this. Joy writes th
 
 ## What doesn't work (yet)
 
-- **All codes are AI drafts.** 77 of 77 rows still need review. The reading pass used keyword-selected sentences, not full reads of every article.
-- **Keyword flags and AI frames agree on only 46 of 77 primary frames.** That's not shocking for crude regex, but it means the flags can't stand in for reading.
-- **The codebook is missing codes the data keeps asking for**: national claiming, safety/exile, multiple identity (see `codebook.md`). `other` is doing too much work (8 primary, 2 secondary).
+- **All codes are still AI drafts.** A second pass on 2026-10-28 read every article in full and changed 51 of 77 rows (14 primary frames, 18 secondary, 27 identity lists, 11 money flags, 3 voice flags, 3 dates, 11 evidence notes). It also caught real mistakes in the first pass: Ovechkin's words given to Rublev (C119), a journalist called American with no source for that (C018) and Tennishead dates that were actually printed in the page text. `reviewed_by` is still blank on all 77, because only I can fill that in.
+- **Keyword flags and AI frames agree on only 51 of 77 primary frames** (46 before the full read and the new codes). That's not shocking for crude regex, but it means the flags can't stand in for reading.
+- **The codebook needed codes the data kept asking for.** I added `national_claiming` and `multiple_identity` and widened `opportunity_funding` to cover recruitment. I skipped a safety/exile code (see `codebook.md`). `other` went from 8 primary codes to 5.
 - **Sources are uneven.** Kukushkin and Golubev coverage is older and thinner. No Georgian-language items for Dzalamidze, one Belarusian outlet for Sabalenka, only 2 Australian outlets for Kasatkina.
 - **Pub dates from page metadata aren't always right.** Tennishead stamps 2010-era articles with 2018-11-08. We blanked 3 dates, but there could be more evergreen pages (Tennis Majors profile) with update dates instead of publish dates.
 - **The Sackmann originals were offline.** The preview uses a mirror we can't fully verify.
-- **Switch years are fuzzy.** Shevchenko played Stockholm under the Kazakh flag in October 2022 per a KTF statement, but most outlets say January 2024. A single `switch_year` has the same problem as a single country code.
+- **Switch years are fuzzy.** A Stockholm results graphic showed Shevchenko with a Kazakh flag in October 2022, but the KTF only had his request under review then and he started playing for Kazakhstan in January 2024. I kept 2024. A single `switch_year` has the same problem as a single country code.
 
 ## Tech problems hit along the way
 
@@ -30,7 +30,7 @@ These are raw notes on what actually happened while building this. Joy writes th
 
 - Is a mirror of the Sackmann data OK for the audit, or should we look for another official-style dataset (ITF, Olympics) as a second check?
 - Should neutral players stay in the sample? They make the "single code" point really clearly, but they didn't switch anything themselves.
-- Should I add the suggested codes (national claiming, safety/exile, multiple identity), or keep the codebook small and lean on `uncertainty_note`?
+- Is adding `national_claiming` and `multiple_identity` OK, or should the codebook stay closer to the group's shared one?
 - Is 7 or 8 items per player enough to say anything per player, or should the analysis be per frame and per outlet country instead?
 - How should AI-drafted coding be cited or disclosed in the final writeup beyond `ai-chat-log.md`?
 
