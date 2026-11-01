@@ -20,7 +20,8 @@ As of 2026-10-28:
 - [x] Audit preview against Sackmann data (mirror, see `audit_plan.md`)
 - [x] Joy reviewed the items, sent a fix list (applied 2026-10-28) and approved all 75 (2026-11-01)
 - [x] Codebook changes: added `national_claiming` and `multiple_identity`, widened `opportunity_funding` (`codebook.md`)
-- [ ] Joy edits the reflection and checks the references through the UIUC library
+- [x] References checked against publisher records and abstracts (2026-11-01)
+- [ ] Joy reads the reflection once
 
 ## File map
 

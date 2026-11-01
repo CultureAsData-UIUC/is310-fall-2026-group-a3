@@ -122,3 +122,7 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 ## Approving the review (2026-11-01)
 
 Joy said they had reviewed the items and gave Claude explicit permission to record that, with the instruction "say that it was reviewed by me approve all". Claude made a review CSV with all 75 items set to confirm and reviewer "Joy", ran `check_dataset.py --apply-review` on it (0 rows to fix, 0 rows missing review) and changed the "Provisional AI code." prefix in `uncertainty_note` to "AI draft, approved by Joy 2026-11-01." README, codebook, collection notes and reflection were updated to match. Codes themselves were not changed in this step.
+
+## Checking the references (2026-11-01)
+
+Joy asked Claude to check the 3 references through the UIUC library. Claude can't log in with Joy's NetID, so it checked public records instead: the Yale Law Journal page and PDF for Shachar (abstract confirmed, pages 2088 to 2139, June 2011), Crossref and the Erasmus repository abstract for Jansen, Oonk and Engbersen (all details matched) and Crossref plus Open Library for Hutchins and Rowe (Routledge 2012, DOI added). One error turned up: our Jansen summary said "167 track and field switches", but the abstract says 167 athletes who competed for two countries at the Summer Olympics. That was fixed and the "verify via UIUC library" flags were removed.
