@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28T14:39:59",
+  "generated": "2026-11-01T15:19:14",
   "dataset": "data/tennis_nationality_dataset.csv",
   "rows": 75,
   "players": {
@@ -26,10 +26,8 @@
     "loyalty_betrayal": 3
   },
   "structurally_consistent": true,
-  "rows_missing_review": 75,
-  "problem_counts": {
-    "review": 75
-  },
+  "rows_missing_review": 0,
+  "problem_counts": {},
   "problems": [],
   "note": "Passing means structurally consistent, not correct. Codes need human review."
 }

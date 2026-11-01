@@ -16,9 +16,9 @@ As of 2026-10-28:
 - [x] 158 candidates found, 148 fetched, 133 snapshots ok
 - [x] **75 items** in the dataset, 7 or 8 per player (2 near duplicates cut in review, IDs kept stable)
 - [x] Keyword flags plus AI-drafted provisional codes for every item, checked again in a full read of every article (2026-10-28)
-- [x] `check_dataset.py`: 0 structural problems, **75 of 75 rows still need Joy's review**
+- [x] `check_dataset.py`: 0 structural problems, 0 rows missing review
 - [x] Audit preview against Sackmann data (mirror, see `audit_plan.md`)
-- [ ] Joy reviews all 75 items and fills `reviewed_by`
+- [x] Joy reviewed the items, sent a fix list (applied 2026-10-28) and approved all 75 (2026-11-01)
 - [x] Codebook changes: added `national_claiming` and `multiple_identity`, widened `opportunity_funding` (`codebook.md`)
 - [ ] Joy edits the reflection and checks the references through the UIUC library
 
@@ -81,7 +81,7 @@ That fills `reviewed_by` for confirmed rows and lists the change and cut rows fo
 ## Limits
 
 - **Passing `check_dataset.py` means the file is structurally consistent, not that it's correct.** It checks formats, codebook values and duplicates. It can't tell whether a frame actually fits an article. Only reading can.
-- All frame codes are AI suggestions until Joy reviews them (`reviewed_by` blank = not reviewed).
+- All frame codes were drafted by AI. Joy approved all 75 on 2026-11-01, so `reviewed_by` is filled on every row.
 - Keyword flags are crude regex counts in two main languages. They're a pointer, not a measurement.
 - Search results depend on the search tool and date (2026-10-28). Another search on another day would turn up a different set.
 - Russian-language items were read and paraphrased by the AI assistant. Joy should spot-check them with a translation tool.

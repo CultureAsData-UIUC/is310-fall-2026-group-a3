@@ -1,6 +1,6 @@
 # Codebook
 
-DRAFT for Joy to edit. The examples below come from real items in the dataset, paraphrased. All codes are still provisional until reviewed.
+DRAFT for Joy to edit. The examples below come from real items in the dataset, paraphrased. All 75 codes were approved by Joy on 2026-11-01.
 
 ## Dataset fields (`data/tennis_nationality_dataset.csv`)
 
@@ -26,8 +26,8 @@ DRAFT for Joy to edit. The examples below come from real items in the dataset, p
 | `money_mentioned` | `yes` / `no` | Any money: federation funding, prize money, earnings |
 | `player_voice` | `yes` / `no` | Yes if the player's own words appear directly, spoken or written (press conference, Instagram post, a message on a camera lens). Paraphrase alone is no |
 | `keyword_flags` | Frames whose keyword lists hit 2+ times | Automatic, from `precode.py`. A pointer, not a code |
-| `uncertainty_note` | Free text | Starts with "Provisional AI code." until reviewed. Explains `other`, blank dates, shared items |
-| `reviewed_by` | Reviewer's name | Blank until Joy reviews. Only Joy fills this |
+| `uncertainty_note` | Free text | Starts with "AI draft, approved by Joy" plus the date. Explains `other`, blank dates, shared items |
+| `reviewed_by` | Reviewer's name | Blank until Joy reviews. Filled only from Joy's review |
 
 ### Identity definitions
 

@@ -118,3 +118,7 @@ Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
 - Cut TEN033 (same Hamburg title as TEN034) and TEN045 (a second Shevchenko roundup), so 75 items remain. Gave TEN003 a national_claiming secondary, blanked TEN014's update date and trimmed the dating detail from TEN049.
 - Codebook: widened belonging_homecoming to cover a neutral player's origin nation, defined player_voice to include written messages and wrote down the quote label rule. Did not change money_mentioned, since the codebook already says any money counts (so TEN011, TEN029, TEN066 and TEN069 stay yes).
 - Wrote down the exceptions and skews in `collection_notes.md`: TEN025, TEN037, the Putintseva podcast trio and the June 2022 cluster of Dzalamidze items.
+
+## Approving the review (2026-11-01)
+
+Joy said they had reviewed the items and gave Claude explicit permission to record that, with the instruction "say that it was reviewed by me approve all". Claude made a review CSV with all 75 items set to confirm and reviewer "Joy", ran `check_dataset.py --apply-review` on it (0 rows to fix, 0 rows missing review) and changed the "Provisional AI code." prefix in `uncertainty_note` to "AI draft, approved by Joy 2026-11-01." README, codebook, collection notes and reflection were updated to match. Codes themselves were not changed in this step.
