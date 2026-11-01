@@ -1,0 +1,128 @@
+# AI chat log: Joy tennis nationality strand
+
+Tool: Claude Code (Claude Opus 5.5). Every substantive AI step gets logged here.
+
+## 2026-10-28: Phase 0 setup
+
+- Gave Claude my CLAUDE.md with the phased plan for my Milestone 2 strand.
+- Claude cloned the group repo to `~/is310/is310-fall-2026-group-a3` and made branch `joy-tennis-milestone2`.
+- Claude created the `Milestone 2/joy_tennis_nationality/` folder layout with empty placeholder files.
+- Claude added `snapshots/` and `.venv/` to the root `.gitignore` so raw HTML never gets committed.
+- Claude set up a venv at the repo root with requests, beautifulsoup4, pandas and trafilatura.
+- Noticed: the repo has no root README and the teammates' work sits in `IS310_Milestone_2_Dataset` and `IS310_Milestone_2_Starter` instead of per person folders. Flagged for me to decide on navigation later.
+- Nothing committed or pushed yet.
+
+## 2026-10-28: Told Claude to run every phase
+
+- I said "go and do it all unless you need a credential from me." Claude still left `reviewed_by` blank, did not push or open a PR and did not touch teammates' folders.
+
+## Phase 1: switch facts and source discovery
+
+- Claude verified all 10 switch facts with web searches and wrote `data/players.csv` with a source URL and notes on any conflicts (month disagreements, Kasatkina residency vs citizenship, Shevchenko's 2022 vs 2024 flag).
+- Search queries used (Claude Code web search, 2026-10-28):
+  - Elena Rybakina switched to Kazakhstan 2018 from Russia
+  - Alexander Bublik started representing Kazakhstan year switched from Russia
+  - Yulia Putintseva switched nationality Russia to Kazakhstan 2012
+  - Mikhail Kukushkin Andrey Golubev switched to Kazakhstan 2008 Davis Cup
+  - Alexander Shevchenko switches to Kazakhstan from Russia
+  - Daria Kasatkina switches allegiance to Australia
+  - Natela Dzalamidze switches to Georgia Wimbledon 2022
+  - ATP WTA Russian Belarusian players neutral flag March 2022 decision Rublev Sabalenka
+  - Rybakina Wimbledon 2022 champion Russian-born Kazakhstan nationality question
+  - Рыбакина Казахстан смена гражданства интервью
+  - Bublik Kazakhstan Russia federation interview why he switched
+  - Бублик Казахстан переход Россия федерация
+  - Putintseva Kazakhstan Russian-born interview federation Utemuratov
+  - Kukushkin Kazakhstan Russian-born Davis Cup interview citizenship
+  - Andrey Golubev Kazakhstan Russian-born Italy Davis Cup nationality
+  - Kazakhstan tennis federation Russian-born players imports Utemuratov money
+  - Shevchenko Kazakhstan switch "Potapova" Vienna reason interview 2024
+  - Касаткина Австралия смена гражданства реакция Россия
+  - Kasatkina Australia citizenship Guardian ABC interview Russia LGBTQ
+  - Дзаламидзе Грузия гражданство Уимблдон
+  - Rublev neutral athlete no flag interview Russia war "no war please"
+  - Sabalenka neutral flag Belarus Lukashenko questions press conference
+  - Sabalenka Australian Open champion neutral no flag identity Belarus 2023
+  - Rublev Wimbledon 2023 neutral Russian players allowed back reaction
+  - Путинцева Казахстан почему сменила гражданство Россия интервью
+  - Кукушкин гражданство Казахстан Россия интервью переход (no useful results)
+  - Голубев Казахстан гражданство переход интервью
+  - Natela Dzalamidze Georgian tennis federation Georgia media Olympics Paris
+  - Рублев нейтральный статус флаг интервью Россия
+  - Сабаленка нейтральный флаг Беларусь Лукашенко
+  - Rybakina Russian-born Kazakhstan feature profile Guardian New York Times federation
+  - Shevchenko Kazakhstan Davis Cup debut Russian-born flag change reaction
+  - Mikhail Kukushkin Kazakhstan veteran Russian-born career retire Davis Cup hero
+  - Golubev Hamburg 2010 title Kazakhstan first ATP champion Russian-born
+  - Sabalenka Belarus flag "neutral" interview identity "I'm Belarusian" 2024 2025
+  - Rublev Russian players neutral status Olympics Paris 2024 decline tennis
+  - ნატელა ძალამიძე საქართველო ჩოგბურთი (Georgian, nothing about her)
+  - Kasatkina Tennis Australia welcome statement new Australian Herald Sun
+  - БелТА Соболенко победа Australian Open белорусская теннисистка
+  - Рублев Спорт-Экспресс интервью нейтральный флаг без флага России
+  - Кукушкин теннисист сменил гражданство Казахстан Волгоград (follow-up)
+  - Kukushkin St. Petersburg Open 2010 title Kazakhstan Russian-born beats Youzhny (follow-up)
+- Claude hand-built `data/candidate_seed.csv` from those results (only URLs that showed up in results, content-farm pages left out) and wrote `scripts/find_sources.py` to dedupe, flag syndicated copies and check robots.txt.
+- Bug: the first robots check marked 50 URLs as disallowed because `robotparser` used the Python-urllib agent and got 403s. Claude fixed it to fetch robots.txt with our real user agent. Final: 10 excluded with reasons.
+
+## Phase 2: snapshots
+
+- Claude wrote `scripts/snapshot.py` (2 second delay, real user agent, raw HTML + trafilatura text into gitignored `snapshots/`, everything logged to `data/snapshot_log.csv`).
+- 133 of 148 fetched ok. Failures are logged. Fixed a mojibake bug on Russian pages with no charset header and refetched those.
+
+## Phase 3: pre-coding
+
+- Claude wrote `scripts/precode.py` with keyword lists per frame (English + Russian + a few Italian and French terms) and a merge step that never overwrites rows I've reviewed.
+- Claude read digests of every ok snapshot (key sentences plus targeted checks), picked 77 items and drafted all evidence notes and codes in `data/coding_suggestions.csv`. Every one is marked "Provisional AI code."
+- CHECKPOINT 2 (walk Joy through 10 items) did NOT happen live because I told Claude to run everything. The review report is set up so I can do it now.
+- Claude suggested codebook changes (national_claiming, safety_exile, multiple_identity) instead of changing the codebook itself.
+
+## Phases 4 and 5: review report and checks
+
+- Claude wrote `scripts/check_dataset.py` (standard library only): ID, required field, codebook, date, URL, duplicate, hash, switch fact and copyright checks plus review status. It builds `reports/collection_report.html` (no article text) and a local copy with excerpts in `snapshots/`.
+- Claude tested the checks on a deliberately broken copy to make sure they fire. Real data: 0 structural problems, 77 rows not reviewed.
+
+## Phase 6: audit preview
+
+- The original `JeffSackmann/tennis_atp` and `tennis_wta` repos returned 404. Claude found and used the archival mirror `Aneeshers/tennis-sackmann-archive` pinned to commit 8373358735, and confirmed the column names from the real files.
+- `scripts/audit_preview.py` matched all 10 players exactly and wrote `data/audit_preview.csv` and `reports/audit_preview_summary.md`.
+
+## Phase 7: docs
+
+- Claude drafted README, codebook, collection notes, audit plan, reflection notes and references. The references were checked against publisher and library records but are still marked "verify via UIUC library".
+- Claude made a mistake in the first codebook draft: the example item IDs were guessed and all pointed to the wrong rows. It caught this by checking against the dataset and fixed them.
+
+## Phase 8: commits and push
+
+- Claude made 8 commits on `joy-tennis-milestone2`. I asked for no co-author lines, so Claude rewrote the commit messages to take them out. I'm the only author.
+- Pushing straight to the group repo failed with a 403 because my account only has read access. The PR will go up from a fork or after I get added as a collaborator.
+
+## 2026-10-28: Full read and decisions
+
+- I asked Claude to do the review pass and make the open calls. Claude still left `reviewed_by` blank on every row, since my rules say only I fill that in.
+- Claude read all 77 article texts in full against their draft codes and changed 51 rows. Each change is explained in that row's `uncertainty_note`. Mistakes it caught from the first pass: Ovechkin's words given to Rublev (C119), a journalist called "US" with no source for that (C018), Tennishead dates printed in the page text but left blank (C059, C060, C064), and several missed identities and money mentions.
+- Decisions: Shevchenko's switch_year stays 2024, and the October 2022 Kazakh flag gets treated as an audit finding. Kasatkina stays AUS with a note that it's permanent residency, not citizenship. Added `national_claiming` and `multiple_identity` to the codebook, widened `opportunity_funding` to cover recruitment, and skipped a safety code (it goes under `politics_war`).
+- Updated `check_dataset.py` and `precode.py` for the new codes and reran them. Result: 0 structural problems and 77 rows still waiting on my review.
+
+## 2026-10-28: Reflection
+
+- I asked Claude to write `reflection.md` from the notes and run it through the humanizer skill so it doesn't read like AI. It's in my voice, but the Use of AI section says Claude wrote the first draft.
+
+## 2026-10-28: Applying a review checklist
+
+- I pasted a checklist of dataset issues and Claude worked through it.
+- Added `player_id` (canonical Latin name) next to `player` (as written), so each player is one group. Item IDs are now stored and stay fixed, so cutting a row leaves a gap instead of renumbering.
+- Checked all 62 quotes word for word against the full snapshot text or headline. All matched.
+- Labeled every quote with its speaker and added English translations after the 22 ru, fr and it quotes.
+- Rewrote every `uncertainty_note` down to its final reasoning and moved the old notes, edit history included, to `data/coding_history.csv`. Old candidate IDs became TEN IDs or "candidate not included".
+- Cut TEN033 (same Hamburg title as TEN034) and TEN045 (a second Shevchenko roundup), so 75 items remain. Gave TEN003 a national_claiming secondary, blanked TEN014's update date and trimmed the dating detail from TEN049.
+- Codebook: widened belonging_homecoming to cover a neutral player's origin nation, defined player_voice to include written messages and wrote down the quote label rule. Did not change money_mentioned, since the codebook already says any money counts (so TEN011, TEN029, TEN066 and TEN069 stay yes).
+- Wrote down the exceptions and skews in `collection_notes.md`: TEN025, TEN037, the Putintseva podcast trio and the June 2022 cluster of Dzalamidze items.
+
+## Approving the review (2026-11-01)
+
+Joy said they had reviewed the items and gave Claude explicit permission to record that, with the instruction "say that it was reviewed by me approve all". Claude made a review CSV with all 75 items set to confirm and reviewer "Joy", ran `check_dataset.py --apply-review` on it (0 rows to fix, 0 rows missing review) and changed the "Provisional AI code." prefix in `uncertainty_note` to "AI draft, approved by Joy 2026-11-01." README, codebook, collection notes and reflection were updated to match. Codes themselves were not changed in this step.
+
+## Checking the references (2026-11-01)
+
+Joy asked Claude to check the 3 references through the UIUC library. Claude can't log in with Joy's NetID, so it checked public records instead: the Yale Law Journal page and PDF for Shachar (abstract confirmed, pages 2088 to 2139, June 2011), Crossref and the Erasmus repository abstract for Jansen, Oonk and Engbersen (all details matched) and Crossref plus Open Library for Hutchins and Rowe (Routledge 2012, DOI added). One error turned up: our Jansen summary said "167 track and field switches", but the abstract says 167 athletes who competed for two countries at the Summer Olympics. That was fixed and the "verify via UIUC library" flags were removed.

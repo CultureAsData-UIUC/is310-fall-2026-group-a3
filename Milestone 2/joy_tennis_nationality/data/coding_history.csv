@@ -1,0 +1,78 @@
+item_id,candidate_id,status,old_uncertainty_note
+TEN001,C003,kept,"Provisional AI code. Also notes the wealth of KTF president Utemuratov. Headline and lead frame her as Moscow-born but Kazakh and based nowhere, so multiple_identity over pragmatic_career."
+TEN002,C006,kept,Provisional AI code. loyalty_betrayal comes from the outlet's wording not from her. Changed from pragmatic_career after full read: the subheading and sweeteners line frame the switches as bought.
+TEN003,C007,kept,Provisional AI code. Also covers Russia claiming her win (national_claiming would be the secondary if politics_war were not).
+TEN004,C008,kept,"Provisional AI code. Main angle is Russia claiming credit for a Kazakh win and no code fits that well. Suggest adding a national_claiming code. RFE/RL (C010) carried near identical text and was not included. She is quoted directly on the war and the ban, so player_voice is yes."
+TEN005,C015,kept,"Provisional AI code. flag_of_convenience is the Russian side's claim that her Kazakh nationality is only sporting. The outlet itself pushes back. national_claiming is Tarpishchev saying she still lives in Moscow and is Russian. flag_of_convenience is his 'sporting citizenship' line, which the KTF and the outlet reject."
+TEN006,C016,kept,Provisional AI code. loyalty_betrayal comes from the interviewer's questions not from her answers.
+TEN007,C018,kept,"Provisional AI code. Third hand: Kazakh outlet quoting a US journalist's post. Original post not checked. Earlier draft called Cunningham a US journalist. The text does not say where he is from, so that was removed."
+TEN008,C019,kept,"Provisional AI code. Another national claiming fight. Sobchak is pushing back on Russians claiming the win, so national_claiming. politics_war is the passport getting her around the ban."
+TEN009,C025,kept,Provisional AI code. Speaker is the father not the player. Headline quote is attributed to the father. Speaker is the father not the player. Quote is from the headline. national_claiming is the Tarpishchev text.
+TEN010,C026,kept,Provisional AI code. Federation's own explanation.
+TEN011,C027,kept,"Provisional AI code. Neutral roster style profile with no clear frame. Shows the switch announced as routine. Full read: also says he lives in Monaco with his parents and lists his career earnings, so residence and money added."
+TEN012,C028,kept,"Provisional AI code. Full read: the core is Kazakh fans' bond with him and Russian users still calling him theirs, so belonging_homecoming / national_claiming. Mentions KTF financial support. Also has a Shevchenko paragraph (mother from Kazakhstan, switch since early 2024)."
+TEN013,C030,kept,Provisional AI code. Covers four players and is filed under Bublik because he is the one quoted. Mentions the Rent-a-Russian label.
+TEN014,C031,kept,Provisional AI code. Evergreen profile so the metadata date may be the last update not first publication.
+TEN015,C032,kept,Provisional AI code. Switch is one line of background.
+TEN016,C034,kept,Provisional AI code. Earliest item in the sample (switch year).
+TEN017,C035,kept,Provisional AI code. Headline calls her a Russian tennis player in 2024. Same podcast as C036 and C037. Quote is from the headline. Headline calls her a Russian tennis player in 2024. Same podcast as C036 and C037.
+TEN018,C036,kept,"Provisional AI code. Same podcast as C035 and C037. Compare how the Kazakh and Russian headlines spin it. Full read: she is asked whether Kazakhstan still pays coach or travel costs and mentions ticket help, so money is yes."
+TEN019,C037,kept,Provisional AI code. Same podcast as C035 and C036.
+TEN020,C039,kept,"Provisional AI code. Changed after full read: the piece is mainly about why she switched (money), not only fan support."
+TEN021,C040,kept,Provisional AI code. Changed after full read: the switch reason given is support and money.
+TEN022,C042,kept,"Provisional AI code. Relayed from another outlet. New Times KZ (C041) ran the same press conference. Full read: she also says she has Russian roots and loves Russia as a country and won't comment on what's happening there, and repeats the free balls story. Close to multiple_identity but the headline is feeling Kazakh."
+TEN023,C045,kept,"Provisional AI code. Covers Kukushkin and Golubev and is filed under Kukushkin. Outlet is from the opposing team's country. Full read: also says Golubev lives in Italy, so residence added."
+TEN024,C047,kept,Provisional AI code. Secondhand from a CLAY interview that was not checked.
+TEN025,C051,kept,Provisional AI code. Switch not mentioned. The Kazakh home framing is taken for granted.
+TEN026,C052,kept,"Provisional AI code. The quote is Kukushkin talking about Bublik not himself. Secondary added: he says he talked Bublik into the KTF move and it would not have happened without him (recruitment, under the widened opportunity_funding)."
+TEN027,C155,kept,Provisional AI code.
+TEN028,C156,kept,"Provisional AI code. Old country press stressing his Russian hometown in a match report. No code fits. Maybe national_claiming. Moved from other to the new national_claiming code. Weak case: it's the hometown label plus calling Youzhny 'our' player, not an outright claim."
+TEN029,C157,kept,Provisional AI code. Mostly a match report with nationality as background. money_mentioned is prize money not federation money.
+TEN030,C059,kept,"Provisional AI code. Metadata date 2018-11-08 is a site migration stamp. The page text says originally published 27/02/12, so that date is used. 'Four years ago' from 2012 fits the 2008 switch."
+TEN031,C060,kept,"Provisional AI code. Moved from other to the new multiple_identity code (Russia + Italy + Kazakhstan, 'citizen of the world'). Metadata date is a migration stamp. The page text says originally published 09/02/12, so that date is used."
+TEN032,C061,kept,Provisional AI code. Quote is the headline.
+TEN033,C062,"cut: Same Hamburg 2010 title as TEN034, which has player voice",Provisional AI code. Brief match report with the switch only as background.
+TEN034,C064,kept,"Provisional AI code. Metadata date is a migration stamp. The page text says originally published 26/07/10, so that date is used. Full read: Golubev is quoted on the title, so player_voice is yes."
+TEN035,C066,kept,Provisional AI code. He calls Kazakhstan back home while the article says he barely lives there.
+TEN036,C068,kept,Provisional AI code. Covers Golubev + Kukushkin + Schukin + Korolev and is filed under Golubev because he is quoted. Also ties the team to Kazakhstan's authoritarian politics.
+TEN037,C072,kept,"Provisional AI code. Federation level item where Golubev is mentioned once. Notable that Russia's federation head is credited with helping the transfers. Full read: he says the federation never laid claim to the players' prize money, so money is yes. The invitations are recruitment (widened opportunity_funding)."
+TEN038,C073,kept,"Provisional AI code. Changed after full read: the piece is about him belonging to Russia, Austria, Slovakia and Kazakhstan at once. Also quotes Golubev rejecting the foreign legion label."
+TEN039,C074,kept,"Provisional AI code. Citizenship described as still pending at the time. Full read: opens with him playing under a neutral flag for two years because of sanctions, so politics_war secondary."
+TEN040,C075,kept,Provisional AI code.
+TEN041,C076,kept,"Provisional AI code. flag_of_convenience is weak and comes from the another Russian framing. Dropped flag_of_convenience after full read: the 'another Russian' headline is not enough for it. Useful for the switch year question: it treats the 2022 flag as a glitch, not a switch."
+TEN042,C077,kept,"Provisional AI code. Procedural statement with no clear frame. Important for the audit: a Kazakh flag in October 2022 while players.csv says 2024. Decision 2026-10-28: switch_year stays 2024. In Oct 2022 the KTF only says a request is under review, and C076 says the Stockholm flag seemed unexpected even to him. The Oct 2022 flag still matters for the audit (codes can run ahead of the official switch)."
+TEN043,C078,kept,Provisional AI code. Quote is the headline attributed to him. Full read added the heritage angle (mother from Kazakhstan).
+TEN044,C079,kept,Provisional AI code. Roundup where Shevchenko gets one line. Useful for the bigger pattern.
+TEN045,C081,cut: Second Shevchenko roundup a day after TEN044 with the same one line on him,Provisional AI code. Roundup. Frame comes from the list's since the war framing.
+TEN046,C086,kept,"Provisional AI code. Canberra Times ran the same AAP text (C100) and was not included. Wire says permanent residency not citizenship. Full read: her post mentions respect for her roots, so heritage added."
+TEN047,C088,kept,"Provisional AI code. The federation recruiting her is notable but no code covers recruitment without money. Recruitment by Tennis Australia now fits the widened opportunity_funding, but it stays out because politics_war (being openly gay, no choice) is the stronger second frame and the max is two."
+TEN048,C090,kept,"Provisional AI code. Full read: says Melbourne will be her new home, so residence added."
+TEN049,C092,kept,Provisional AI code. Decision 2026-10-28: no separate safety code. Being unsafe in Russia as a gay war critic goes under politics_war. Full read added heritage (respect for her roots).
+TEN050,C095,kept,"Provisional AI code. Betrayal is what others say about her. The outlet is sympathetic. Full read: Tikhonov says a lot was invested in her, so money is yes."
+TEN051,C097,kept,"Provisional AI code. Outlet is Prague based but writes for a Russian audience. Full read: quotes her Instagram post directly, so player_voice is yes."
+TEN052,C098,kept,"Provisional AI code. A Russian domestic portal reporting the move flatly. No betrayal framing in what was read. The outlet calls it a change of citizenship, but the post it quotes is about permanent residency. Good example of the citizenship vs residency confusion."
+TEN053,C104,kept,"Provisional AI code. SuperSport is South African but the text reads like AFP. Full read: recalls her criticism of Moscow on LGBTQ people and the war, so politics_war secondary."
+TEN054,C106,kept,Provisional AI code.
+TEN055,C107,kept,Provisional AI code.
+TEN056,C108,kept,Provisional AI code. The Moscow Times is based in Amsterdam so outlet_country is NL.
+TEN057,C112,kept,Provisional AI code.
+TEN058,C114,kept,Provisional AI code. Full read: she says the Russian federation never contacted her and calls the ban on Russian athletes unfair.
+TEN059,C115,kept,Provisional AI code. Changed after full read: her own framing is being both Russian and Georgian. belonging_homecoming dropped.
+TEN060,C117,kept,Provisional AI code. Procedural approval story. politics_war only because the ban is why it is news.
+TEN061,C118,kept,Provisional AI code.
+TEN062,C119,kept,"Provisional AI code. Published days before the 1 March 2022 neutral ruling. Fixed after full read: the earlier note gave Ovechkin's lines (Moscow native, family in Russia and Ukraine) to Rublev. player_voice yes rests on his written message only."
+TEN063,C120,kept,Provisional AI code.
+TEN064,C122,kept,Provisional AI code.
+TEN065,C123,kept,Provisional AI code. Infobae (C132) ran a similar wire story and was not included.
+TEN066,C124,kept,"Provisional AI code. Full read: notes the returning players cannot take Russian or Belarusian state funding or sponsors, so money is yes."
+TEN067,C126,kept,Provisional AI code. Very short and gives no reason for declining.
+TEN068,C127,kept,Provisional AI code.
+TEN069,C128,kept,"Provisional AI code. Rublev is only named as an example. The target is all neutral tennis players. Full read: Pozdnyakov's line is that they live and earn abroad, so residence and money added."
+TEN070,C134,kept,Provisional AI code. Secondary is Lukashenko saying people know her country despite the neutral flag.
+TEN071,C135,kept,Provisional AI code. Onmanorama (C146) ran the same text and was not included. Lukashenko claiming her is another national_claiming case so secondary is other. Secondary moved from other to the new national_claiming code (Lukashenko claiming her).
+TEN072,C137,kept,Provisional AI code. Secondary other = national claiming again. Secondary moved from other to the new national_claiming code.
+TEN073,C139,kept,"Provisional AI code. The final pairs a neutral player and a switched player. Full read: calls her the 24-year-old from Minsk, and she says everyone still knows she is a Belarusian player."
+TEN074,C142,kept,"Provisional AI code. Secondhand from the Piers Morgan interview. Some quote marks in the snapshot are garbled by encoding. belonging_homecoming is a stretch here: it's her home country, not a new one. She is choosing not to switch."
+TEN075,C143,kept,Provisional AI code. The ITF kept its neutral rule a day later (see KRQE item C148 in candidates).
+TEN076,C149,kept,"Provisional AI code. Full read: she says she'll fly back to Miami, not to Belarus, so residence added."
+TEN077,C153,kept,"Provisional AI code. Russian press names her country outright despite the neutral rule. Fits a national_claiming code if Joy adds one. Moved from other to the new national_claiming code. It's Russian press naming her as Belarus's representative, not Belarus claiming her itself."

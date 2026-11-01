@@ -1,0 +1,33 @@
+{
+  "generated": "2026-11-01T15:19:14",
+  "dataset": "data/tennis_nationality_dataset.csv",
+  "rows": 75,
+  "players": {
+    "Elena Rybakina": 8,
+    "Alexander Bublik": 7,
+    "Yulia Putintseva": 7,
+    "Mikhail Kukushkin": 7,
+    "Andrey Golubev": 7,
+    "Alexander Shevchenko": 7,
+    "Daria Kasatkina": 8,
+    "Natela Dzalamidze": 8,
+    "Andrey Rublev": 8,
+    "Aryna Sabalenka": 8
+  },
+  "frame_primary_counts": {
+    "multiple_identity": 4,
+    "flag_of_convenience": 9,
+    "politics_war": 18,
+    "national_claiming": 5,
+    "opportunity_funding": 16,
+    "other": 4,
+    "belonging_homecoming": 11,
+    "pragmatic_career": 5,
+    "loyalty_betrayal": 3
+  },
+  "structurally_consistent": true,
+  "rows_missing_review": 0,
+  "problem_counts": {},
+  "problems": [],
+  "note": "Passing means structurally consistent, not correct. Codes need human review."
+}
