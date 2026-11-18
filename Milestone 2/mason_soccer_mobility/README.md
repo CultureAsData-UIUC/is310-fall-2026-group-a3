@@ -1,0 +1,31 @@
+# Who gets a route to Europe?
+
+How do U.S. Soccer and independent reporters describe the opportunities available to players in the U.S. men's national-team pool? The comparison covers English-language accounts published from 2017 through October 22, 2026. Domestic academy stories provide a comparison for claims about what Europe offers.
+
+[The dataset](accounts.csv) contains the 25 soccer articles and interviews from the shared collection. One row represents one published account. A story about several players counts once. Three stories on Brenden Aaronson count three times because each makes a different part of the same transition visible. Syndicated copies count once under the original producer. Fourteen accounts come from U.S. Soccer and seven appeared in The Guardian. Counts describe this selection and depend heavily on those outlets' editorial choices.
+
+## Reading the accounts
+
+SOC015 connects Aaronson's announced transfer to his development in Philadelphia. SOC011 starts with his arrival alone in Salzburg. SOC016 follows his adjustment after the move. Reading only the announcement would give Philadelphia's role considerable weight while saying little about what arrival felt like. SOC002 offers a domestic comparison: Tyler Adams's hometown academy and national-team mentors appear as sources of opportunity. SOC003 raises a different question about access: which opportunities could a European passport make available to Christian Pulisic? A passport enters the analysis only where the passage connects it to access. Birthplace alone cannot establish immigration status.
+
+Velema's study of recruitment networks gives the Dallas–Bayern relationship in SOC009 particular significance. A partnership can put a young player in front of recruiters before a reporter ever describes him as choosing Europe. Darby, Akindes and Kirwin examine how academies organize recruitment from Africa to Europe. Their work suggests asking who controls access to trials and who benefits when players leave. The U.S. accounts require their own evidence about those relationships. [Velema (2021)](https://doi.org/10.1177/1012690220919676) · [Darby, Akindes and Kirwin (2007)](https://doi.org/10.1177/0193723507300481)
+
+## Collection and coding
+
+Each row retains the shared record ID, URL, publisher, original producer, source date and date basis, access date, access method, passage locator and paraphrase. The three added fields below are provisional readings of the saved evidence notes. A student review requires reopening the passage, recording any correction and entering the actual reviewer's name. Give indexed excerpts priority because the surrounding text may qualify a claim.
+
+- **pathway** identifies what the passage describes. Academy training, professional transfer, family relocation, passport access, national-team choice and domestic development are distinct. Multiple values use a vertical bar. “Development abroad” covers overseas experience where the evidence gives too little detail to classify a transaction. “Development commentary” covers assessments without a specific move.
+- **frame** records what the account emphasizes about the pathway, such as support, opportunity, restricted playing time or adjustment. Code prestige only for an explicit status comparison between clubs or leagues. A European destination alone gives insufficient evidence. “Unclear” means the saved passage does not establish a frame.
+- **basis** briefly states why the tags fit. A player's reported explanation can support a claim about how the player described a decision at that moment. A journalist's interpretation remains attributed to the account.
+
+To expand toward 50 accounts, collect 25 further distinct texts within the same publication window, starting with independent interviews and domestic academy profiles. Search each focal player's name with the academy, club, or city and retain contrary accounts. Record the headline, URL, access date, exact section or paragraph opening, speaker and a short paraphrase during manual collection. Save a dated excerpt or permitted archive link when possible. Keep changed passages in the revision history. Review the mix of publishers and repeat subjects before interpreting counts.
+
+## Transfer audit
+
+The comparison source is the player-by-player MLS inventory [2020 outgoing transfers](https://www.mlssoccer.com/news/look-all-mls-outgoing-transfers-2020). Its window and coverage are explicit: it follows departures from MLS, including agreements reached in 2020 that took effect later. Use the named player and both clubs to identify a match. Check announcement and effective dates separately against the club release. Club locations describe the institutions involved. They cannot establish when a family changed residence.
+
+[The pilot match](audit.csv) links three account IDs to one league entry. MLS gives January 1, 2021 as the transfer date. Philadelphia announced the agreement October 16 and specified eligibility in January. That verifies the month while leaving the exact day dependent on the league inventory. The transfer fields omit the experience of arriving alone described in SOC011. Both MLS and the Union had an interest in presenting a homegrown player's transfer as a success. The club release corroborates the agreement within that institutional setting.
+
+For a full audit, screen every account for a named departure from an MLS club agreed in 2020. Record unmatched eligible cases separately from out-of-window transfers, family moves, training visits and changes of national association. For example, SOC024 describes national-team choice and falls outside the inventory's definition. One matched transfer cannot estimate league-wide coverage.
+
+Run `python check.py` from this directory to check IDs, evidence fields, dates and audit links and count distinct accounts by producer type. The dates in the accounts table refer to publication or revision. Event dates belong in the audit.
