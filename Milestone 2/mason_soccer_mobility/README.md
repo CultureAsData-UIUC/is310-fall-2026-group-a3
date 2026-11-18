@@ -20,6 +20,10 @@ Each row retains the shared record ID, URL, publisher, original producer, source
 
 To expand toward 50 accounts, collect 25 further distinct texts within the same publication window, starting with independent interviews and domestic academy profiles. Search each focal player's name with the academy, club, or city and retain contrary accounts. Record the headline, URL, access date, exact section or paragraph opening, speaker and a short paraphrase during manual collection. Save a dated excerpt or permitted archive link when possible. Keep changed passages in the revision history. Review the mix of publishers and repeat subjects before interpreting counts.
 
+## Mason's reflection, November 18
+
+I agree with the coding overall. It was a bit hard to put numbers on things like opportunity and support. Take Aaronson going to Salzburg. A transfer record can tell me which club he joined and when, but the article also talks about how his mom wanted to help him settle in and couldn't travel with him. That detail matters to how I read the move, even if it doesn't fit neatly into one category. I tried my best to pick labels I could explain and keep enough of the story in each row so someone else could see why I read it that way.
+
 ## Transfer audit
 
 The comparison source is the player-by-player MLS inventory [2020 outgoing transfers](https://www.mlssoccer.com/news/look-all-mls-outgoing-transfers-2020). Its window and coverage are explicit: it follows departures from MLS, including agreements reached in 2020 that took effect later. Use the named player and both clubs to identify a match. Check announcement and effective dates separately against the club release. Club locations describe the institutions involved. They cannot establish when a family changed residence.
