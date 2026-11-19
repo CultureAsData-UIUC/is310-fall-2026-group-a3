@@ -19,8 +19,14 @@ Secondary exploratory comparisons may distinguish home-country coverage and even
 - The original item IDs, source metadata, evidence notes, flags, and column order are preserved without interpretive changes.
 - `shared_codebook_reference.md` is a copy of the original group codebook for reference, **not** a revised individual codebook.
 
-## Relationship to group work
-This working copy extracts the NBA strand from the shared project without changing the group’s files. Subsequent personal verification, coding decisions, documentation, and computational changes will be tracked separately.
+## Relationship to Group Work
+This project represents my individual contribution to the IS 310 Milestone 2 assignment. My research focuses specifically on how international NBA players are portrayed in institutional and independent sports media.
+
+The original group submission combined 75 records across three sports: NBA, soccer, and Formula 1. My individual dataset contains the 25 NBA records from that submission.
+
+To distinguish my individual research from the original group work, I created a separate GitHub branch named `drew-nba-milestone2`. This branch allows me to revise my dataset, develop an individual codebook, document my interpretive decisions, and conduct independent analysis without modifying the original group submission.
+
+The original 25 NBA records serve as the starting point for my revisions. Their existing classifications remain provisional until I personally review the sources and document my decisions.
 
 ## Remaining work
 1. [Completed in Step 2] Define a precise source comparison and sampling rationale.
