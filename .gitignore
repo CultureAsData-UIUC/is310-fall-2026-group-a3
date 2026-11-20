@@ -1,1 +1,8 @@
 .DS_Store
+
+# Joy tennis strand: raw snapshots stay local (copyright)
+Milestone 2/joy_tennis_nationality/snapshots/
+# local venv
+.venv/
+# Sackmann data pulled locally for the audit preview (re-download with audit_preview.py instructions)
+Milestone 2/joy_tennis_nationality/sackmann_raw/
