@@ -102,18 +102,6 @@ These restrictions may make it more difficult for the instructor or another revi
 
 The individual project uses the following files:
 
-```text
-Milestone 2/
-├── README.md
-├── codebook.md
-├── data/
-│   └── nba_media_dataset.csv
-├── reviews/
-│   └── nba_review_log.csv
-├── reflection.md
-└── audit_plan.md
-```
-
 - `README.md` — Explains the individual research question, scope, selection process, and relationship to the shared project.
 - `codebook.md` — Defines the eight review-log fields and their classification rules.
 - `data/nba_media_dataset.csv` — Contains the inherited article records and source metadata.

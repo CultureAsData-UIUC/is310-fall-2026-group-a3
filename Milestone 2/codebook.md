@@ -40,7 +40,7 @@ item_id,review_date,source_verified,cultural_frame,audience_evidence,evidence_no
 
 ## 4. Cultural Frame Definitions
 
-Choose **one dominant cultural frame** based on the article's central emphasis, rather than a passing mention of nationality.
+Choose one dominant cultural frame based on the article's central emphasis, rather than a passing mention of nationality.
 
 | Value | Decision Rule |
 |---|---|
